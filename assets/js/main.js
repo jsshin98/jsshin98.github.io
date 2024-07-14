@@ -192,6 +192,63 @@
 
   });
 
+    /**
+   * Press & Talks slider
+   */
+    window.addEventListener('load', () => {
+      new Swiper('.talks-slider', {
+        speed: 600,
+        slidesPerView: 2, //'auto'
+        spaceBetween: 10,
+        centeredSlides: true,
+        breakpoints : { // Interactive with width
+          820: {
+            slidesPerView : 3,
+          },
+          1280: {
+            slidesPerView : 3,
+          },
+        },
+        loop: true,
+        loopAdditionalSlides: 1,
+        autoplay: {
+          delay: 5000, // TODO: 5000
+          disableOnInteraction: true/*false*/
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+          clickable: true
+        },
+    //    on: {
+    //      slideChange: function (el) {
+    //        $('.swiper-slide').each(function () {
+    //          let youtubePlayer = this.find('iframe').get(0);
+    //          if (youtubePlayer) {
+    //            youtubePlayer.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    //          }
+    //        });
+    //      },
+    //    },
+      });
+      /* Youtube video button bg lazyloader */
+      let youtubeContainer = select('.youtube-container', true);
+      youtubeContainer.forEach((el) => {
+        let youtubeId = el.id;
+        el.style.backgroundImage = "url('http://i.ytimg.com/vi/" + youtubeId + "/sddefault.jpg')";
+      });
+      /* Youtube video button load event listener */
+      on('click', '.youtube-play', function(e) {
+        let youtubeId = this.parentNode.id;
+        this.outerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + youtubeId + '?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+      }, true);
+      AOS.refresh();
+    });
+
   /**
    * Initiate portfolio lightbox 
    */

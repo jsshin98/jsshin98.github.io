@@ -766,19 +766,6 @@ section {
   z-index: 1;
 }
 
-.portfolio .portfolio-wrap::before {
-  content: "";
-  background: rgba(44, 73, 100, 0.6);
-  position: absolute;
-  left: 30px;
-  right: 30px;
-  top: 30px;
-  bottom: 30px;
-  transition: all ease-in-out 0.3s;
-  z-index: 2;
-  opacity: 0;
-}
-
 .portfolio .portfolio-wrap .portfolio-info {
   opacity: 0;
   position: absolute;
@@ -997,6 +984,128 @@ section {
     margin: 30px 10px;
   }
 }
+
+
+/*--------------------------------------------------------------
+# Talks
+--------------------------------------------------------------*/
+.talks .section-title {
+  padding-bottom: 0px;
+}
+.talks .talks-slider {
+  overflow: hidden;
+}
+.talks .swiper-wrapper {
+  width: 100%;
+  height: 100%
+}
+.talks .swiper-wrapper .swiper-slide {
+  margin: 35px 0 10px 0;
+  width: 100%;
+  background-color: #EFEFEF;
+  /*height: 0;*/
+  /*padding-bottom: 56.25%;*/
+  border-radius: 20px;
+  transition: all ease-in-out 0.3s;
+  background: var(--color-bg);
+  box-shadow: 0px 5px 70px 0px rgba(110, 123, 131, 0.1);
+}
+.talks .swiper-wrapper .swiper-slide:hover {
+  border-color: #fff;
+  box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.16);
+}
+.talks .swiper-wrapper .swiper-slide .video-container, .talks .swiper-wrapper .swiper-slide .image-container {
+  width: 100%;
+  height: 0;
+  position: relative;
+  padding-bottom: 56.25%;
+}
+.talks .swiper-wrapper .swiper-slide .video-container iframe, .talks .swiper-wrapper .swiper-slide .image-container img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.talks .swiper-wrapper .swiper-slide .youtube-container {
+  width: 100%;
+  height: 0;
+  position: relative;
+  padding-bottom: 56.25%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  overflow: hidden;
+  transition: all 200ms ease-out;
+}
+.talks .swiper-wrapper .swiper-slide .youtube-container button, .talks .swiper-wrapper .swiper-slide .youtube-container iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.talks .swiper-wrapper .swiper-slide .youtube-play {
+  border: none;
+  padding: 0;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNTEycHgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnIGlkPSJfeDMzXzk1LXlvdXR1YmUiPjxnPjxwYXRoIGQ9Ik00NzYuMzg3LDE0NC44ODhjLTUuMjkxLTE5LjkxOS0yMC44NzgtMzUuNjA4LTQwLjY3LTQwLjkzM0MzOTkuODQ1LDk0LjI4MiwyNTYsOTQuMjgyLDI1Niw5NC4yODIgICAgcy0xNDMuODQ1LDAtMTc5LjcxOSw5LjY3NGMtMTkuNzkxLDUuMzI1LTM1LjM3OCwyMS4wMTMtNDAuNjY4LDQwLjkzM2MtOS42MTIsMzYuMTA1LTkuNjEyLDExMS40MzgtOS42MTIsMTExLjQzOCAgICBzMCw3NS4zMzQsOS42MTIsMTExLjQzOGM1LjI5LDE5LjkyLDIwLjg3NywzNC45NTUsNDAuNjY4LDQwLjI4MUMxMTIuMTU1LDQxNy43MTksMjU2LDQxNy43MTksMjU2LDQxNy43MTkgICAgczE0My44NDUsMCwxNzkuNzE3LTkuNjc0YzE5Ljc5Mi01LjMyNiwzNS4zNzktMjAuMzYxLDQwLjY3LTQwLjI4MWM5LjYxMi0zNi4xMDQsOS42MTItMTExLjQzOCw5LjYxMi0xMTEuNDM4ICAgIFM0ODUuOTk5LDE4MC45OTQsNDc2LjM4NywxNDQuODg4eiIgc3R5bGU9ImZpbGw6I0ZGMDAwMDsiLz48cG9seWdvbiBwb2ludHM9IjIwOC45NTQsMzI0LjcyMyAyMDguOTU0LDE4Ny45MyAzMjkuMTgsMjU2LjMyOCAgICIgc3R5bGU9ImZpbGw6I0ZGRkZGRjsiLz48L2c+PC9nPjxnIGlkPSJMYXllcl8xIi8+PC9zdmc+) no-repeat center center;
+  background-size: 78px 78px;
+  cursor:pointer;
+}
+.talks .talk-item {
+  text-align: center;
+}
+.talks .talk-item h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+  color: var(--color-text-title);
+}
+.talks .talk-item h3 a {
+  color: var(--color-text-title);
+}
+.talks .talk-item h3 a:hover {
+  color: var(--color-text-link-hover);
+}
+.talks .talk-item h4 {
+  font-size: 14px;
+  color: #999;
+  margin: 0 0 10px 0;
+}
+.talks .talk-item p {
+  font-style: italic;
+  margin: 0 auto 15px auto;
+  width: 95%;
+  color: var(--color-text-detail);
+  hyphens: auto;
+}
+@media (min-width: 820px) {
+  .talks .talk-item p {
+    width: 85%;
+  }
+}
+.talks .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+.talks .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #0563bb;
+}
+.talks .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #0563bb;
+}
+
 
 /*--------------------------------------------------------------
 # Contact
