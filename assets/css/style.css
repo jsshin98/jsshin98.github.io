@@ -330,9 +330,10 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 80vh;
-  background: url("../img/bg_kingscross5.jpg") top center;
+  min-height: 65vh;
+  background: url("../img/rio1.jpg") center 100%;
   background-size: cover;
+  background-repeat: no-repeat;
   padding: 0px;
 }
 
