@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="ComPose: a hand-aware 6DoF object pose tracking framework that harmonizes hand motion as a complementary cue for object tracking from RGB video.">
+  <meta name="keywords" content="ComPose, Object Pose Tracking, 6DoF, Hand-Object, RGB Video, Embodied AI, Robot Manipulation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ComPose: When to Trust Hands for Object Pose Tracking</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">ComPose: When to Trust Hands for Object Pose Tracking</h1>
+          <div class="is-size-5 publication-authors">
+            <!-- TODO: verify affiliation numbers for each author -->
+            <span class="author-block">
+              <a href="https://jsshin98.github.io">Jisu Shin</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://leejunoh.com">Junoh Lee</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://github.com/jungyu0413">Jungyu Lee</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://ihbae.com">Inhwan Bae</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://dohyeon-lee.github.io/">Dohyeon Lee</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://jellyho.github.io/">Hokyun Im</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://youngwoon.github.io">Youngwoon Lee</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://sites.google.com/site/hgjeoncv/">Hae-Gon Jeon</a><sup>1</sup><sup>&dagger;</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>GIST,</span>
+            <span class="author-block"><sup>2</sup>Yonsei University</span>
+            <br>
+            <span class="author-block is-size-6">In collaboration with <a href="https://youngwoon.github.io/">Yonsei RLLab</a></span>
+            <br>
+            <span class="author-block is-size-6"><sup>&dagger;</sup>Corresponding author</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link.
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2605.23523"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <!-- arXiv Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2605.23523"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link.
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/jsshin98/ComPose"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser. Replace teaser.mp4 with your own teaser video/figure. -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/demo.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">ComPose</span> tracks 6DoF object poses from RGB video by harmonizing
+        hand motion as a complementary cue &mdash; even under severe occlusion from hand grasps.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+            Reconstructing the motion of objects from videos is a key component for embodied AI and
+            robot manipulation. While diverse approaches to object pose tracking have been studied,
+            they rely heavily on strong external priors, such as depth data or 3D templates, and
+            remain highly vulnerable to severe occlusions by hand grasps despite the use of explicit
+            masks. In this work, we present <span class="dnerf">ComPose</span>, a 6DoF object tracking
+            framework designed for hand-aware object pose estimation from RGB video. Rather than
+            treating the hand purely as an occluder, our method harmonizes hand motions as a
+            complementary cue for object tracking. In detail, we recover a variety of object motions
+            over time by combining object and hand cues from foundation models within a unified
+            tracking pipeline. Here, <span class="dnerf">ComPose</span> adaptively selects
+            informative hand joints, combines object- and hand-derived cues for motion estimation,
+            and refines the resulting object motion using visible geometric evidence and a learned
+            correction. We further enforce temporal consistency over both rotation and translation, yielding
+            stable 3D object trajectories over time without any external smoothing.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<!-- Method / Pipeline. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Method</h2>
+        <figure class="image">
+          <img src="./static/images/framework.jpg" alt="ComPose framework overview."/>
+        </figure>
+        <div class="content has-text-justified" style="margin-top: 1.5rem;">
+          <p>
+            <span class="dnerf">ComPose</span> combines object and hand cues from foundation models
+            within a unified tracking pipeline. It <b>(i)</b> adaptively selects informative hand
+            joints, <b>(ii)</b> combines object- and hand-derived cues for motion estimation, and
+            <b>(iii)</b> refines the resulting object motion using visible geometric evidence and a
+            learned correction. Temporal consistency is enforced over both rotation and translation,
+            producing stable 3D object trajectories without external smoothing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Results. Drop your result videos into static/videos/ and update the sources below. -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered" style="margin-bottom: 1.5rem;">Results</h2>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths has-text-centered">
+          <video id="comparison" autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/comparison.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{shin2026compose,
+  author    = {Shin, Jisu and Lee, Junoh and Lee, JunGyu and Bae, Inhwan and Lee, Dohyeon and Im, Hokyun and Lee, Youngwoon and Jeon, Hae-Gon},
+  title     = {ComPose: When to Trust Hands for Object Pose Tracking},
+  journal   = {arXiv preprint arXiv:2605.23523},
+  year      = {2026},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://arxiv.org/pdf/2605.23523">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/jsshin98" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This website borrows the source code from the <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
