@@ -736,7 +736,7 @@ section {
   font-weight: 500;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: #4b7dab;
+  color: #222;
   font-family: "Poppins", sans-serif;
 }
 
@@ -745,6 +745,16 @@ section {
   margin-top: -2px;
   border-left: 2px solid #d43076;
   position: relative;
+}
+
+.resume .resume-item p em {
+  font-style: normal;
+  font-weight: 600;
+  color: #2c4964;
+}
+
+.resume .resume-item p em .org {
+  color: #d43076;
 }
 
 .resume .resume-item h4 {
