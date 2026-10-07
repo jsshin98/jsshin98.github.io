@@ -330,11 +330,11 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  min-height: 50vh;
+  min-height: 32vh;
   background: url("../img/bg_sweden.jpg") center top;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 0px;
+  padding: 28px 0;
 }
 
 #hero h1 {
@@ -542,10 +542,154 @@ section {
   color: #6b96be;
 }
 
+.about .content .quicklinks {
+  margin: 14px 0 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: #437099;
+}
+
+.about .content .quicklinks a {
+  color: #437099;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: ease-in-out 0.3s;
+}
+
+.about .content .quicklinks a:hover {
+  color: #d43076;
+}
+
+.about .content .quicklinks .sep {
+  padding: 0 8px;
+  color: #b9c9d9;
+}
+
 .about .image {
-  background: url("../img/me.jpg") center top no-repeat;
-  background-size: cover;
   max-width: 18%;
+}
+
+.about .image img {
+  width: 100%;
+  height: auto;
+  align-self: flex-start;
+}
+
+@media (max-width: 1199px) {
+  .about .image {
+    max-width: 160px;
+    margin-bottom: 16px;
+  }
+}
+
+/*--------------------------------------------------------------
+# News
+--------------------------------------------------------------*/
+.news .news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.news .news-list > li {
+  display: flex;
+  gap: 24px;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.news .news-list > li:nth-child(n + 7) {
+  display: none;
+}
+
+.news .news-toggle:checked ~ .news-list > li {
+  display: flex;
+}
+
+.news .when {
+  flex: 0 0 90px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c4964;
+  font-variant-numeric: tabular-nums;
+}
+
+.news .what {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.news .what strong {
+  font-weight: 600;
+  color: #2c4964;
+}
+
+.news .what a,
+.news .what .paper {
+  color: #437099;
+  font-weight: 600;
+  transition: ease-in-out 0.3s;
+}
+
+.news .what a:hover {
+  color: #d43076;
+}
+
+.news .news-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.news .news-more-btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 5px 16px;
+  border: 1px solid #c9d6e2;
+  border-radius: 999px;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #437099;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.news .news-more-btn:hover {
+  color: #d43076;
+  border-color: #d43076;
+}
+
+.news .more-close {
+  display: none;
+}
+
+.news .news-toggle:checked ~ .news-more-btn .more-open {
+  display: none;
+}
+
+.news .news-toggle:checked ~ .news-more-btn .more-close {
+  display: inline;
+}
+
+@media (max-width: 575px) {
+  .news .news-list > li {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .news .when {
+    flex-basis: auto;
+  }
 }
 
 /*--------------------------------------------------------------
