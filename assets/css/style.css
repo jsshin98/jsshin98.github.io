@@ -629,13 +629,13 @@ section {
 
 .news .what a,
 .news .what .paper {
-  color: #437099;
+  color: #d43076;
   font-weight: 600;
   transition: ease-in-out 0.3s;
 }
 
 .news .what a:hover {
-  color: #d43076;
+  color: #2c4964;
 }
 
 .news .news-toggle {
@@ -926,7 +926,7 @@ section {
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .portfolio .portfolio-item .title {
