@@ -880,6 +880,38 @@ section {
   margin-bottom: 30px;
 }
 
+.portfolio .portfolio-item .title {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #2c4964;
+  margin-bottom: 6px;
+}
+
+.portfolio .portfolio-item .author {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.portfolio .portfolio-item .author b {
+  color: #d43076;
+  font-weight: 600;
+}
+
+.portfolio .portfolio-item .description {
+  font-size: 14px;
+  color: #5a656e;
+  margin-bottom: 10px;
+}
+
+.portfolio .portfolio-item .description b {
+  font-weight: 600;
+  color: #345676;
+}
+
 .portfolio #portfolio-flters {
   padding: 0;
   margin: 0 auto 35px auto;
