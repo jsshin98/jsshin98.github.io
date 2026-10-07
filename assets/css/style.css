@@ -30,7 +30,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -397,7 +397,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 36px 0;
 }
 
 .section-bg {
@@ -405,12 +405,12 @@ section {
 }
 
 .section-title {
-  padding-bottom: 30px;
+  padding-bottom: 16px;
 }
 
 .section-title h2 {
-  font-size: 32px;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: 600;
   margin-bottom: 15px;
   padding-bottom: 15px;
   position: relative;
@@ -799,8 +799,15 @@ section {
   height: 100%;
 }
 
-.services .interest::before {
-  content: "";
+.services .interest > i {
+  display: block;
+  font-size: 22px;
+  line-height: 1;
+  color: #d43076;
+  margin-bottom: 8px;
+}
+
+.services .interest .bar {
   display: block;
   width: 28px;
   height: 3px;
