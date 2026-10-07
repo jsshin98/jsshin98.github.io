@@ -79,6 +79,7 @@ h6 {
 }
 
 #header .logo h1 {
+  font-family: "Playfair Display", serif;
   font-size: 26px;
   margin: 0;
   padding: 6px 0;
